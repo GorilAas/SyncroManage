@@ -3,13 +3,6 @@
 ![Syncro Manage Banner](https://i.ibb.co/ynT8jDH2/image.png)
 
 **Syncro Manage** é um aplicativo Android desenvolvido em Java para gerenciar **vendas**, **serviços** e **estoque** de forma simples e eficiente. Ideal para pequenos negócios e autônomos, o app permite gerar relatórios em **PDF** e **XML**, com sincronização na nuvem e armazenamento local.
-
----
-
-## 📹 Demonstração
-
-Assista ao vídeo promocional do **Syncro Manage** para conhecer suas funcionalidades:
-
 <p align="center">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/x00pdL5N5oU" title="Syncro Manage Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
@@ -44,13 +37,6 @@ Assista ao vídeo promocional do **Syncro Manage** para conhecer suas funcionali
 - **SQLite**: Banco local com DAOs para Estoque, Venda, Serviço e Relatórios.
 
 ---
-
-## 📸 Galeria
-
-### Imagem Promocional
-<p align="center">
-  <img src="https://i.ibb.co/ynT8jDH2/image.png" alt="Imagem Promocional" width="60%"/>
-</p>
 
 ### Fluxogramas
 <p align="center">
