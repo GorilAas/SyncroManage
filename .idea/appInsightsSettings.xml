@@ -9,10 +9,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="tech.turso.SyncroManage" />
-                  <option name="mobileSdkAppId" value="1:876965173586:android:b563cf22ad4d3e5776028b" />
-                  <option name="projectId" value="syncromanage" />
-                  <option name="projectNumber" value="876965173586" />
+                  <option name="appId" value="PLACEHOLDER" />
+                  <option name="mobileSdkAppId" value="" />
+                  <option name="projectId" value="" />
+                  <option name="projectNumber" value="" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

@@ -1,0 +1,158 @@
+// Importa os módulos necessários
+const functions = require('@google-cloud/functions-framework');
+const admin = require('firebase-admin');
+const axios = require('axios');
+
+// --- Inicialização do Firebase Admin SDK ---
+// Tenta inicializar de forma segura, evitando erro se já inicializado
+try {
+  if (admin.apps.length === 0) { // Verifica se já existe uma instância padrão
+    admin.initializeApp();
+    console.log("Firebase Admin SDK inicializado com sucesso.");
+  } else {
+    console.log("Firebase Admin SDK já estava inicializado.");
+  }
+} catch (error) {
+  console.error("ERRO CRÍTICO: Falha ao inicializar Firebase Admin SDK:", error);
+  // Lançar o erro impede a função de continuar se o SDK não puder ser usado
+  throw new Error("Não foi possível inicializar o Firebase Admin SDK.");
+}
+// --- Fim da Inicialização ---
+
+
+/**
+ * Função HTTP acionada para gerar um token de banco de dados Turso
+ * baseado em um token de ID do Firebase válido.
+ *
+ * @param {functions.Request} req Objeto de requisição HTTP (espera POST com body.idToken).
+ * @param {functions.Response} res Objeto de resposta HTTP.
+ */
+functions.http('getTursoToken', async (req, res) => {
+    // --- Configuração CORS ---
+    // IMPORTANTE: Em produção, restrinja '*' para o(s) domínio(s) do seu app/site!
+    res.set('Access-Control-Allow-Origin', '*');
+    res.set('Access-Control-Allow-Methods', 'POST, OPTIONS'); // Permite POST e OPTIONS
+    res.set('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Cabeçalhos permitidos
+
+    // Responde a requisições pre-flight (OPTIONS) imediatamente
+    if (req.method === 'OPTIONS') {
+        console.log('Recebida requisição OPTIONS (pre-flight)');
+        res.status(204).send(''); // Status 204 No Content
+        return;
+    }
+    // --- Fim CORS ---
+
+    // Garante que o método seja POST
+    if (req.method !== 'POST') {
+        console.warn(`Método não permitido recebido: ${req.method}`);
+        return res.status(405).send('Method Not Allowed'); // Status 405 Method Not Allowed
+    }
+
+    // Extrai o Token ID do Firebase do corpo da requisição
+    // Espera um JSON como: { "idToken": "SEU_TOKEN_FIREBASE" }
+    const firebaseIdToken = req.body.idToken;
+    if (!firebaseIdToken) {
+        console.warn('Requisição POST recebida sem campo "idToken" no corpo.');
+        return res.status(400).send('Firebase ID Token não fornecido no corpo da requisição.'); // Status 400 Bad Request
+    }
+
+    try {
+        // --- Verifica o Token ID do Firebase ---
+        console.log('Verificando token Firebase...');
+        const decodedToken = await admin.auth().verifyIdToken(firebaseIdToken);
+        const uid = decodedToken.uid;
+        console.log(`Token Firebase verificado com sucesso para UID: ${uid}`);
+
+        // --- Obtém Configurações Turso das Variáveis de Ambiente ---
+        const tursoPlatformApiKey = process.env.TURSO_PLATFORM_API_TOKEN;
+        const tursoOrgSlug = process.env.TURSO_ORG_SLUG;
+        const tursoDbName = process.env.TURSO_DB_NAME;
+
+        // Verifica se as variáveis de ambiente essenciais estão configuradas
+        if (!tursoPlatformApiKey || !tursoOrgSlug || !tursoDbName) {
+             console.error('ERRO FATAL DE CONFIGURAÇÃO: Variáveis de ambiente Turso (TOKEN, SLUG, DBNAME) não definidas!');
+             // Não exponha detalhes internos no erro para o cliente
+             return res.status(500).send('Erro interno do servidor.'); // Status 500 Internal Server Error
+        }
+
+        // --- Configurações para o token Turso a ser gerado ---
+        const tokenExpiration = '2h'; // Validade do token do banco de dados (ex: 2 horas)
+        const tokenAuthorization = 'full-access'; // Permissão do token ('full-access' ou 'read-only')
+
+        // Monta a URL da API da Plataforma Turso
+        const tursoApiUrl = `https://api.turso.tech/v1/organizations/${tursoOrgSlug}/databases/${tursoDbName}/auth/tokens?expiration=${tokenExpiration}&authorization=${tokenAuthorization}`;
+
+        // --- Chama a API da Plataforma Turso ---
+        console.log(`Chamando API Turso (${tursoApiUrl}) para gerar token DB...`);
+        const tursoResponse = await axios.post(
+            tursoApiUrl,
+            {}, // Corpo da requisição geralmente vazio para gerar token simples
+            {
+                headers: {
+                    // Usa o token da plataforma para autenticar esta chamada
+                    'Authorization': `Bearer ${tursoPlatformApiKey}`,
+                    'Content-Type': 'application/json'
+                },
+                // Define um timeout para a chamada à API Turso (ex: 10 segundos)
+                timeout: 10000
+            }
+        );
+
+        // --- Processa a Resposta da API Turso ---
+        const tursoDbToken = tursoResponse.data.jwt;
+        if (!tursoDbToken) {
+             // Se a API Turso responder 200 OK mas sem o token JWT
+             console.error('Token JWT não encontrado na resposta da API Turso (resposta 200 OK):', tursoResponse.data);
+             return res.status(500).send('Erro ao gerar token Turso (resposta inesperada da API).'); // Status 500
+        }
+
+        // --- Envia o Token Turso para o Cliente ---
+        console.log(`Token Turso gerado e enviado com sucesso para UID: ${uid}`);
+        // Retorna o token em um objeto JSON
+        res.status(200).json({ tursoToken: tursoDbToken }); // Status 200 OK
+
+    } catch (error) {
+        // --- Tratamento Geral de Erros ---
+        console.error('ERRO NO PROCESSAMENTO:', error);
+
+        // Verifica erros específicos para retornar status HTTP adequados
+        if (error.code === 'auth/id-token-expired' || (error.errorInfo && error.errorInfo.code === 'auth/id-token-expired')) {
+             console.warn('Token Firebase expirado.');
+             res.status(401).send('Token Firebase expirado.'); // Status 401 Unauthorized
+        } else if (error.code === 'auth/argument-error' || (error.errorInfo && error.errorInfo.code === 'auth/argument-error')) {
+             console.warn('Token Firebase inválido.');
+             res.status(401).send('Token Firebase inválido.'); // Status 401 Unauthorized
+        } else if (axios.isAxiosError(error)) {
+            // Erro na chamada para a API Turso via Axios
+            if (error.response) {
+                // A API Turso respondeu com um status de erro (4xx, 5xx)
+                console.error(`Erro da API Turso: Status ${error.response.status}`, error.response.data);
+                // Não exponha detalhes do erro da API Turso diretamente, se possível
+                res.status(error.response.status >= 500 ? 502 : 400).send(`Erro ao comunicar com o serviço de banco de dados.`); // 502 Bad Gateway ou 400 Bad Request
+            } else if (error.request) {
+                // A requisição foi feita mas não houve resposta (ex: timeout, rede)
+                console.error('Erro de rede ou timeout ao chamar API Turso:', error.message);
+                res.status(504).send('Timeout ao comunicar com o serviço de banco de dados.'); // Status 504 Gateway Timeout
+            } else {
+                // Erro ao configurar a requisição Axios
+                console.error('Erro ao configurar requisição Axios:', error.message);
+                res.status(500).send('Erro interno do servidor (configuração de rede).');
+            }
+        }
+         else {
+             // Outros erros inesperados
+             res.status(500).send('Erro interno do servidor.'); // Status 500 Internal Server Error
+        }
+    }
+});
+
+
+
+package.json
+{
+  "dependencies": {
+    "@google-cloud/functions-framework": "^3.0.0",
+    "firebase-admin": "^12.1.0",
+    "axios": "^1.7.2"
+  }
+}
