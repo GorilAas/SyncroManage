@@ -1,4 +1,4 @@
-<img src="https://i.ibb.co/Q3KhThmZ/logo-text.png" alt="Syncro Manage Logo" border="0" width="60%">
+<img src="https://i.ibb.co/Q3KhThmZ/logo-text.png" alt="Syncro Manage Logo" style="display: block; margin: 0 auto; width: 60%;">
 
 # Syncro Manage
 
