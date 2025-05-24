@@ -1,10 +1,15 @@
+<img src="https://i.ibb.co/Q3KhThmZ/logo-text.png" alt="Syncro Manage Logo" border="0">
+
 # Syncro Manage
 
-![Syncro Manage Banner](https://i.ibb.co/ynT8jDH2/image.png)
-
 **Syncro Manage** é um aplicativo Android desenvolvido em Java para gerenciar **vendas**, **serviços** e **estoque** de forma simples e eficiente. Ideal para pequenos negócios e autônomos, o app permite gerar relatórios em **PDF** e **XML**, com sincronização na nuvem e armazenamento local.
+
 <p align="center">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/x00pdL5N5oU" title="Syncro Manage Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <a href="https://youtu.be/x00pdL5N5oU">
+    <img src="https://img.youtube.com/vi/x00pdL5N5oU/0.jpg" alt="Syncro Manage Demo" width="560"/>
+  </a>
+  <br>
+  <em>Clique na imagem acima para assistir à demonstração do Syncro Manage</em>
 </p>
 
 ---
@@ -38,10 +43,12 @@
 
 ---
 
+## 📸 Galeria
+
 ### Fluxogramas
 <p align="center">
-  <img src="https://i.ibb.co/Pv7CnfN7/image.png" alt="Fluxograma 1" width="45%"/>
-  <img src="https://i.ibb.co/gM17RZJk/image.png" alt="Fluxograma 2" width="45%"/>
+  <img src="https://i.ibb.co/8LW8pS0W/syncro-diagram-improved-gv.png" alt="Fluxograma 1" width="45%"/>
+  <img src="https://i.ibb.co/QFBcKvMy/syncro-dependencies-improved-gv.png" alt="Fluxograma 2" width="45%"/>
 </p>
 
 ---
