@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tema base -->
+    <style name="Theme.SyncroManage" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Cores primárias -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+
+        <!-- Cores secundárias -->
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+
+        <!-- Status bar e cores do sistema -->
+        <item name="android:statusBarColor">@color/colorPrimaryVariant</item>
+        <item name="android:navigationBarColor">@color/colorPrimaryVariant</item>
+
+        <!-- Cores de superfície e fundo -->
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="colorSurface">@color/colorSurface</item>
+        <item name="colorOnSurface">@color/colorOnSurface</item>
+        <item name="colorError">@color/colorError</item>
+
+        <!-- Fontes e tipografia -->
+        <item name="fontFamily">sans-serif</item>
+        <item name="android:fontFamily">sans-serif</item>
+
+        <!-- Estilos de forma -->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.SyncroManage.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.SyncroManage.MediumComponent</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.SyncroManage.LargeComponent</item>
+    </style>
+
+    <!-- Formas pequenas (chips, botões pequenos) -->
+    <style name="ShapeAppearance.SyncroManage.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+
+    <!-- Formas médias (cards, dialogs) -->
+    <style name="ShapeAppearance.SyncroManage.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+
+    <!-- Formas grandes (bottom sheets, navigation drawers) -->
+    <style name="ShapeAppearance.SyncroManage.LargeComponent" parent="ShapeAppearance.MaterialComponents.LargeComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <!-- Estilo para TextInputLayout -->
+    <style name="Widget.SyncroManage.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/colorPrimary</item>
+        <item name="hintTextColor">@color/colorPrimary</item>
+        <item name="errorTextColor">@color/colorError</item>
+    </style>
+
+    <!-- Estilo para Botões -->
+    <style name="Widget.SyncroManage.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/colorOnPrimary</item>
+        <item name="backgroundTint">@color/colorPrimary</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="cornerRadius">24dp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <!-- Estilo para Botões Outlined -->
+    <style name="Widget.SyncroManage.Button.OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">@color/colorPrimary</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="cornerRadius">24dp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <!-- Estilo para Cards -->
+    <style name="Widget.SyncroManage.CardView" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">8dp</item>
+        <item name="contentPadding">16dp</item>
+    </style>
+
+    <!-- Estilo para TextViews de requisitos de senha -->
+    <style name="Widget.SyncroManage.PasswordRequirement" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:drawablePadding">8dp</item>
+    </style>
+</resources>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="4dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/img_icone_venda"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="@string/tipo_item"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/tv_nome_item_venda"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/colorOnSurface"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/btn_opcoes_venda"
+            app:layout_constraintStart_toEndOf="@+id/img_icone_venda"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_quantidade_venda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/color_hint" android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/img_icone_venda"
+            app:layout_constraintTop_toBottomOf="@+id/tv_nome_item_venda" />
+
+        <TextView
+            android:id="@+id/tv_valor_total_venda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/colorSecondary" android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/tv_quantidade_venda"
+            app:layout_constraintTop_toBottomOf="@+id/tv_nome_item_venda" />
+
+        <TextView
+            android:id="@+id/tv_data_venda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/color_hint" android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/img_icone_venda"
+            app:layout_constraintTop_toBottomOf="@+id/tv_quantidade_venda" />
+
+        <TextView
+            android:id="@+id/tv_metodo_pagamento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/color_hint" android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/tv_data_venda"
+            app:layout_constraintTop_toBottomOf="@+id/tv_quantidade_venda" />
+
+        <ImageView
+            android:id="@+id/btn_opcoes_venda"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/opcoes"
+            android:src="@drawable/ic_more_vert"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/colorPrimary" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

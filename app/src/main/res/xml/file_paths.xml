@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- Permitir acesso via FileProvider aos arquivos privados da aplicação -->
+    <external-files-path name="external_files" path="." />
+
+    <!-- Para downloads e outras áreas públicas -->
+    <external-path name="external" path="." />
+
+    <!-- Arquivos internos -->
+    <files-path name="files" path="." />
+
+    <!-- Arquivos de cache -->
+    <cache-path name="cache" path="." />
+</paths>

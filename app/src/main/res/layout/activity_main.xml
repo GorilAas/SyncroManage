@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/logoImage"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/logo_text_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textRegistro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Crie sua conta"
+                android:textColor="@color/brand_primary"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/logoImage" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardForm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textRegistro">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/campoEmail"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="E-mail"
+                        app:boxStrokeColor="@color/brand_primary"
+                        app:hintTextColor="@color/brand_primary"
+                        app:startIconDrawable="@drawable/ic_email"
+                        app:startIconTint="@color/brand_primary">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/textoEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textEmailAddress"
+                            android:textColor="@color/brand_secondary" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/campoSenha"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:hint="Senha"
+                        app:boxStrokeColor="@color/brand_primary"
+                        app:hintTextColor="@color/brand_primary"
+                        app:startIconDrawable="@drawable/ic_lock"
+                        app:startIconTint="@color/brand_primary"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="@color/brand_primary">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/textoSenha"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPassword"
+                            android:textColor="@color/brand_secondary" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/campoConfirmarSenha"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:hint="Confirmar senha"
+                        app:boxStrokeColor="@color/brand_primary"
+                        app:hintTextColor="@color/brand_primary"
+                        app:startIconDrawable="@drawable/ic_lock"
+                        app:startIconTint="@color/brand_primary"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="@color/brand_primary">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/textoConfirmarSenha"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPassword"
+                            android:textColor="@color/brand_secondary" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:id="@+id/requisitosContainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardForm">
+
+                <TextView
+                    android:id="@+id/textoTamanhoMinimo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="✗ Pelo menos 8 caracteres"
+                    android:textColor="@color/brand_secondary"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/textoLetraMaiuscula"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="✗ Pelo menos uma letra maiúscula"
+                    android:textColor="@color/brand_secondary"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/textoLetraMinuscula"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="✗ Pelo menos uma letra minúscula"
+                    android:textColor="@color/brand_secondary"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/textoNumero"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="✗ Pelo menos um número"
+                    android:textColor="@color/brand_secondary"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/textoCaracterEspecial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="✗ Pelo menos um caractere especial (@#$%^&amp;+=!.-_)"
+                    android:textColor="@color/brand_secondary"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/botaoRegistrar"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="32dp"
+                android:text="Criar Conta"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                app:cornerRadius="28dp"
+                app:backgroundTint="@color/brand_primary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/requisitosContainer" />
+
+            <TextView
+                android:id="@+id/textoOu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="OU"
+                android:textColor="@color/brand_secondary"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/botaoRegistrar" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/botaoRegistrarGoogle"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:text="Registrar com Google"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                app:cornerRadius="28dp"
+                app:icon="@drawable/google_icon"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                app:iconTint="@null"
+                app:backgroundTint="#DB4437"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textoOu" />
+
+            <TextView
+                android:id="@+id/textoIrParaLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:text="Já possui conta? Faça login"
+                android:textColor="@color/brand_primary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/botaoRegistrarGoogle"
+                app:layout_constraintBottom_toBottomOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

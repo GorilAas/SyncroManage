@@ -1,0 +1,39 @@
+[versions]
+agp = "8.10.0"
+firebaseAuth = "23.2.0"
+firebaseUiAuth = "9.0.0"
+googleid = "1.1.1"
+itext7Core = "7.2.3"
+itextg = "5.5.10"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+appcompat = "1.7.0"
+material = "1.12.0"
+okhttp = "4.12.0"
+playServicesAuth = "21.3.0"
+firebaseDatabase = "21.0.0"
+uiTextAndroid = "1.8.1"
+composeFoundation = "1.4.1"
+
+[libraries]
+firebase-auth = { module = "com.google.firebase:firebase-auth", version.ref = "firebaseAuth" }
+firebase-ui-auth = { module = "com.firebaseui:firebase-ui-auth", version.ref = "firebaseUiAuth" }
+googleid = { module = "com.google.android.libraries.identity.googleid:googleid", version.ref = "googleid" }
+itext7-core = { module = "com.itextpdf:itext7-core", version.ref = "itext7Core" }
+itextg = { module = "com.itextpdf:itextg", version.ref = "itextg" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+kernel-android = { module = "com.itextpdf.android:kernel-android", version.ref = "itext7Core" }
+layout-android = { module = "com.itextpdf.android:layout-android", version.ref = "itext7Core" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
+play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
+firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
+ui-text-android = { group = "androidx.compose.ui", name = "ui-text-android", version.ref = "uiTextAndroid" }
+compose-foundation = { group = "androidx.wear.compose", name = "compose-foundation", version.ref = "composeFoundation" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }

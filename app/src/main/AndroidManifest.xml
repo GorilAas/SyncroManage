@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="29" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/logo_notext_background"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo_text_background"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SyncroManage"
+        android:requestLegacyExternalStorage="true"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".SplashSyncroDB"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".Login"
+            android:exported="false" />
+
+        <activity
+            android:name=".RecuperarSenha"
+            android:exported="false" />
+
+        <activity
+            android:name=".EstoqueActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vendas"
+            android:exported="false" />
+
+        <activity
+            android:name=".Relatorios"
+            android:exported="false" />
+
+        <activity
+            android:name=".Servicos"
+            android:exported="false" />
+
+        <activity
+            android:name=".Home"
+            android:exported="false" />
+
+        <activity
+            android:name=".FormServicoActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".FormEstoqueActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".FormVendaActivity"
+            android:exported="false" />
+
+
+        <!-- Configuração do FileProvider -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

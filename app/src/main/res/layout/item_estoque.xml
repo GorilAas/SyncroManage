@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginHorizontal="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textNomeProduto"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Nome do Produto"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:ellipsize="end"
+            android:maxLines="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/menuItemOpcoes" />
+
+        <ImageButton
+            android:id="@+id/menuItemOpcoes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Opções"
+            android:padding="8dp"
+            android:src="@drawable/ic_more_vert"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/labelValorUnitario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Valor unitário:"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textNomeProduto" />
+
+        <TextView
+            android:id="@+id/textValorUnitario"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="R$ 0,00"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorSecondary"
+            android:layout_marginStart="4dp"
+            app:layout_constraintStart_toEndOf="@id/labelValorUnitario"
+            app:layout_constraintTop_toTopOf="@id/labelValorUnitario"
+            app:layout_constraintBottom_toBottomOf="@id/labelValorUnitario" />
+
+        <TextView
+            android:id="@+id/labelQuantidade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantidade:"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/labelValorUnitario" />
+
+        <TextView
+            android:id="@+id/textQuantidade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginStart="4dp"
+            app:layout_constraintStart_toEndOf="@id/labelQuantidade"
+            app:layout_constraintTop_toTopOf="@id/labelQuantidade"
+            app:layout_constraintBottom_toBottomOf="@id/labelQuantidade" />
+
+        <TextView
+            android:id="@+id/labelValorTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Valor total:"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/labelQuantidade" />
+
+        <TextView
+            android:id="@+id/textValorTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="R$ 0,00"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginStart="4dp"
+            app:layout_constraintStart_toEndOf="@id/labelValorTotal"
+            app:layout_constraintTop_toTopOf="@id/labelValorTotal"
+            app:layout_constraintBottom_toBottomOf="@id/labelValorTotal" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

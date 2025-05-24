@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">SyncroManage</string>
+    <string name="navigation_drawer_open">Abrir menu de navegação</string>
+    <string name="navigation_drawer_close">Fechar menu de navegação</string>
+
+    <!-- Strings do Menu de Navegação -->
+    <string name="menu_home">Home</string>
+    <string name="menu_vendas">Vendas</string>
+    <string name="menu_estoque">Estoque</string>
+    <string name="menu_servico">Serviço</string>
+    <string name="menu_relatorio">Relatório</string>
+    <string name="menu_preferences">Preferências</string>
+    <string name="menu_themes">Mudar Tema</string>
+    <string name="theme_system">Padrão do Sistema</string>
+    <string name="theme_light">Tema Claro</string>
+    <string name="theme_dark">Tema Escuro</string>
+    <string name="theme_isabella">Tema Isabella (Rosa)</string>
+    <string name="menu_account">Conta</string>
+    <string name="menu_logout">Sair</string>
+
+    <!-- Strings Gerais -->
+    <string name="opcoes">Opções</string>
+    <string name="tipo_item">Tipo de item</string>
+
+    <!-- Strings para Vendas -->
+    <string name="adicionar_venda">Adicionar nova venda</string>
+    <string name="sem_registros">Sem registros</string>
+    <string name="nenhuma_venda_encontrada">Nenhuma venda encontrada</string>
+    <string name="clique_no_botao_para_adicionar_uma_nova_venda">Clique no botão \'+\' para adicionar uma nova venda</string>
+
+    <!-- Strings para Formulários -->
+    <string name="form_label_tipo_item">Tipo de Item</string>
+    <string name="form_label_produto">Produto</string>
+    <string name="form_label_servico">Serviço</string>
+    <string name="form_hint_selecione_produto">Selecione o produto</string>
+    <string name="form_hint_selecione_servico">Selecione o serviço</string>
+    <string name="form_hint_valor_unitario">Valor unitário</string>
+    <string name="form_hint_quantidade">Quantidade</string>
+    <string name="form_label_estoque_disponivel">Estoque disponível: %1$s</string>
+    <string name="form_label_detalhes_venda">Detalhes da Venda</string>
+    <string name="form_hint_data_hora">Data e Hora (opcional)</string>
+    <string name="form_hint_metodo_pagamento">Método de Pagamento</string>
+    <string name="form_label_valor_total_venda">Valor Total da Venda:</string>
+    <string name="form_button_salvar_venda">Salvar Venda</string>
+    <string name="form_button_cancelar">Cancelar</string>
+</resources>

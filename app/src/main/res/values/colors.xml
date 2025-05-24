@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Cores principais da marca -->
+    <color name="brand_primary">#0BC5DA</color>     <!-- Azul turquesa da logo -->
+    <color name="brand_primary_dark">#0A9EB0</color> <!-- Versão mais escura do azul turquesa -->
+    <color name="brand_primary_light">#B2EEFA</color> <!-- Versão mais clara do azul turquesa -->
+    <color name="brand_secondary">#D904A0</color>   <!-- Rosa/magenta da logo -->
+    <color name="brand_secondary_dark">#B00380</color> <!-- Versão mais escura do rosa/magenta -->
+    <color name="brand_secondary_light">#FFB0E6</color> <!-- Versão mais clara do rosa -->
+
+    <!-- Cores do Material Design exigidas pelo Theme -->
+    <color name="purple_200">#33D9E6</color>        <!-- Versão clara do azul (para modo escuro) -->
+    <color name="purple_500">#0BC5DA</color>        <!-- Azul turquesa principal -->
+    <color name="purple_700">#0A9EB0</color>        <!-- Azul turquesa escuro -->
+    <color name="teal_200">#D904A0</color>          <!-- Rosa/magenta principal -->
+    <color name="teal_700">#B00380</color>          <!-- Rosa/magenta escuro -->
+    <color name="white">#FFFFFFFF</color>           <!-- Branco padrão -->
+    <color name="black">#FF000000</color>           <!-- Preto padrão -->
+
+    <!-- Cores para o MaterialDesign -->
+    <color name="colorPrimary">#0BC5DA</color>      <!-- Azul turquesa da logo -->
+    <color name="colorPrimaryVariant">#0A9EB0</color> <!-- Versão mais escura do azul -->
+    <color name="colorSecondary">#D904A0</color>    <!-- Rosa/magenta da logo -->
+    <color name="colorSecondaryVariant">#B00380</color> <!-- Versão mais escura do rosa -->
+    <color name="colorOnPrimary">#FFFFFFFF</color>  <!-- Branco para texto sobre cor primária -->
+    <color name="colorOnSecondary">#FFFFFFFF</color> <!-- Branco para texto sobre cor secundária -->
+    <color name="colorBackground">#F5F5F5</color>   <!-- Fundo cinza bem claro -->
+    <color name="colorSurface">#FFFFFFFF</color>    <!-- Superfície branca padrão -->
+    <color name="colorOnSurface">#FF333333</color>  <!-- Texto quase preto sobre superfícies -->
+    <color name="colorError">#F44336</color>        <!-- Vermelho para erros -->
+    <color name="colorWarning">#FF9800</color>      <!-- Laranja para avisos -->
+    <color name="colorSuccess">#4CAF50</color>      <!-- Verde para sucesso -->
+
+    <!-- Cores para Status de Senha -->
+    <color name="senha_valida">#0BC5DA</color>      <!-- Usando a cor primária -->
+    <color name="senha_invalida">#D904A0</color>    <!-- Usando a cor secundária -->
+
+    <!-- Cores adicionais para UI -->
+    <color name="color_divider">#E0E0E0</color>     <!-- Divider cinza claro -->
+    <color name="color_overlay">#80000000</color>   <!-- Overlay preto semitransparente -->
+    <color name="color_disabled">#CCCCCC</color>    <!-- Cinza para elementos desabilitados -->
+    <color name="color_hint">#9E9E9E</color>        <!-- Cinza médio para dicas -->
+    <color name="colorAccent">#FF4081</color>
+</resources>
