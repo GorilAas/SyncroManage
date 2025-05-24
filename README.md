@@ -70,7 +70,7 @@ Uma função HTTP no Google Cloud gera um token JWT da Turso com base no ID Toke
 - Token é válido por 2 horas
 - Integração feita com `axios`
 
-Você encontra o código da função em: [`cloud/getTursoToken.js`](./cloud/getTursoToken.js)
+Você encontra o código da função em: [`cloud/getTursoToken.js`](./cloud/getTursoToken.txt)
 
 ---
 
