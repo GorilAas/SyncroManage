@@ -93,7 +93,7 @@ Quer contribuir? Siga os passos:
 
 ## 📬 Feedback
 
-Tem sugestões ou encontrou um bug? Abra uma issue no GitHub ou envie um e-mail para [email@example.com](guilhermebernardessz10@gmail.com).
+Tem sugestões ou encontrou um bug? Abra uma issue no GitHub ou envie um e-mail para [guilhermebernardessz10@gmail.com](guilhermebernardessz10@gmail.com).
 
 ---
 
