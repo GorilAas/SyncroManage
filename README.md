@@ -1,4 +1,4 @@
-<img src="https://i.ibb.co/Q3KhThmZ/logo-text.png" alt="Syncro Manage Logo" border="0">
+<img src="https://i.ibb.co/Q3KhThmZ/logo-text.png" alt="Syncro Manage Logo" border="0" width="60%">
 
 # Syncro Manage
 
@@ -9,7 +9,7 @@
     <img src="https://img.youtube.com/vi/x00pdL5N5oU/0.jpg" alt="Syncro Manage Demo" width="560"/>
   </a>
   <br>
-  <em>Clique na imagem acima para assistir à demonstração do Syncro Manage</em>
+  <em>Clique na imagem acima para assistir AD do Syncro Manage</em>
 </p>
 
 ---
@@ -91,7 +91,7 @@ Quer contribuir? Siga os passos:
 
 ## 📬 Feedback
 
-Tem sugestões ou encontrou um bug? Abra uma issue no GitHub ou envie um e-mail para [email@example.com](mailto:email@example.com).
+Tem sugestões ou encontrou um bug? Abra uma issue no GitHub ou envie um e-mail para [email@example.com](guilhermebernardessz10@gmail.com).
 
 ---
 
