@@ -1,7 +1,11 @@
 # Syncro Manage
 
 **Syncro Manage** é um aplicativo Android desenvolvido em Java que permite gerenciar **vendas**, **serviços** e **estoque** de forma simples e eficiente. Além disso, o app permite gerar relatórios em **XML** e **PDF**, ideal para pequenos negócios ou profissionais autônomos.
-
+<p align="center">
+  <a href="https://youtu.be/x00pdL5N5oU?si=xivI8rVOwJGX2dk0">
+    <img src="https://img.youtube.com/vi/x00pdL5N5oU/0.jpg" alt="Assista à propaganda" width="100%"/>
+  </a>
+</p>
 ---
 
 ## Recursos principais
@@ -24,25 +28,17 @@
 - **Turso Tech** (SQLite na nuvem + réplica local)
 - **Google Cloud Function** (emissão de token seguro)
 - **SQLite** local com DAOs organizadas (Estoque, Venda, Serviço, Relatório)
-
----
-
 <p align="center">
   <img src="https://i.ibb.co/ynT8jDH2/image.png" alt="Imagem de propaganda" width="60%"/>
 </p>
+---
 
 <p align="center">
-  <a href="https://youtu.be/x00pdL5N5oU?si=xivI8rVOwJGX2dk0">
-    <img src="https://img.youtube.com/vi/x00pdL5N5oU/0.jpg" alt="Assista à propaganda" width="60%"/>
-  </a>
+  <img src="https://i.ibb.co/Pv7CnfN7/image.png" alt="Fluxograma 1" width="100%"/>
 </p>
 
 <p align="center">
-  <img src="https://i.ibb.co/Pv7CnfN7/image.png" alt="Fluxograma 1" width="80%"/>
-</p>
-
-<p align="center">
-  <img src="https://i.ibb.co/gM17RZJk/image.png" alt="Fluxograma 2" width="80%"/>
+  <img src="https://i.ibb.co/gM17RZJk/image.png" alt="Fluxograma 2" width="100%"/>
 </p>
 
 ---
