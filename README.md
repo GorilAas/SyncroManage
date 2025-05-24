@@ -27,21 +27,23 @@
 
 ---
 
-## Propaganda do App
+<p align="center">
+  <img src="https://i.ibb.co/ynT8jDH2/image.png" alt="Imagem de propaganda" width="60%"/>
+</p>
 
-![Imagem de propaganda](https://i.ibb.co/ynT8jDH2/image.png)
+<p align="center">
+  <a href="https://youtu.be/x00pdL5N5oU?si=xivI8rVOwJGX2dk0">
+    <img src="https://img.youtube.com/vi/x00pdL5N5oU/0.jpg" alt="Assista à propaganda" width="60%"/>
+  </a>
+</p>
 
-[![Assista à propaganda](https://img.youtube.com/vi/x00pdL5N5oU/0.jpg)](https://youtu.be/x00pdL5N5oU?si=xivI8rVOwJGX2dk0)
+<p align="center">
+  <img src="https://i.ibb.co/Pv7CnfN7/image.png" alt="Fluxograma 1" width="80%"/>
+</p>
 
----
-
-## Como funciona por trás (fluxogramas)
-
-### Fluxograma 1: Sincronização e Banco de Dados
-![Fluxograma 1](https://i.ibb.co/Pv7CnfN7/image.png)
-
-### Fluxograma 2: Processo de Venda e Relatórios
-![Fluxograma 2](https://i.ibb.co/gM17RZJk/image.png)
+<p align="center">
+  <img src="https://i.ibb.co/gM17RZJk/image.png" alt="Fluxograma 2" width="80%"/>
+</p>
 
 ---
 
