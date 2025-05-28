@@ -6,12 +6,20 @@
 
 **Syncro Manage** é um aplicativo Android desenvolvido em Java para gerenciar **vendas**, **serviços** e **estoque** de forma simples e eficiente. Ideal para pequenos negócios e autônomos, o app permite gerar relatórios em **PDF** e **XML**, com sincronização na nuvem e armazenamento local.
 
-<p align="center">
-  <a href="https://youtu.be/x00pdL5N5oU">
-    <img src="https://img.youtube.com/vi/x00pdL5N5oU/0.jpg" alt="Syncro Manage Demo" width="560"/>
+<<p align="center">
+  <a href="https://www.youtube.com/watch?v=VXBBblX6n48">
+    <img src="https://img.youtube.com/vi/VXBBblX6n48/0.jpg" alt="Syncro Manage AD (PT)" width="560"/>
   </a>
   <br>
-  <em>Clique na imagem acima para assistir AD do Syncro Manage</em>
+  <em>Clique na imagem acima para assistir ao anúncio do app Syncro Manage (versão em português)</em>
+</p>
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=-QahqMvtC4E">
+    <img src="https://img.youtube.com/vi/-QahqMvtC4E/0.jpg" alt="Syncro Manage AD (EN)" width="560"/>
+  </a>
+  <br>
+  <em>Clique na imagem acima para assistir ao anúncio do app Syncro Manage (versão em inglês)</em>
 </p>
 
 ---
