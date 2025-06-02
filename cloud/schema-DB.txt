@@ -1,0 +1,44 @@
+"name","type","sql"
+"idx_estoque_id_usuario","index","CREATE INDEX idx_estoque_id_usuario ON estoque(id_usuario)"
+"idx_estoque_usuario_nome","index","CREATE INDEX idx_estoque_usuario_nome ON estoque(id_usuario, nome_produto)"
+"idx_servicos_id_usuario","index","CREATE INDEX idx_servicos_id_usuario ON servicos(id_usuario)"
+"idx_vendas_data","index","CREATE INDEX idx_vendas_data ON vendas(data_hora_venda)"
+"idx_vendas_id_servico","index","CREATE INDEX idx_vendas_id_servico ON vendas(id_servico_vendido)"
+"idx_vendas_id_usuario","index","CREATE INDEX idx_vendas_id_usuario ON vendas(id_usuario)"
+"idx_vendas_tipo_item","index","CREATE INDEX idx_vendas_tipo_item ON vendas(tipo_item)"
+"estoque","table","CREATE TABLE estoque (
+    id_estoque INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_usuario TEXT NOT NULL, -- UID do Firebase do dono do estoque
+    nome_produto TEXT NOT NULL, 
+    custo_unitario REAL NOT NULL CHECK (custo_unitario >= 0),
+    valor_unitario REAL NOT NULL CHECK (valor_unitario >= 0), 
+    quantidade INTEGER NOT NULL CHECK (quantidade >= 0)
+)"
+"servicos","table","CREATE TABLE servicos (
+    id_servico INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_usuario TEXT NOT NULL,
+    nome TEXT NOT NULL,
+    custo_unitario REAL NOT NULL CHECK (custo_unitario >= 0),
+    valor_unitario REAL NOT NULL CHECK (valor_unitario >= 0)
+)"
+"sqlite_sequence","table","CREATE TABLE sqlite_sequence(name,seq)"
+"test","table","CREATE TABLE test (a int)"
+"vendas","table","CREATE TABLE vendas (
+    id_venda INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_usuario TEXT NOT NULL,
+    tipo_item TEXT NOT NULL CHECK (tipo_item IN ('produto', 'servico')),
+    id_servico_vendido INTEGER NULL, 
+    nome_item_vendido TEXT NOT NULL,
+    valor_unitario_vendido REAL NOT NULL, 
+    quantidade INTEGER NOT NULL CHECK (quantidade > 0),
+    valor_total_venda REAL NOT NULL CHECK (valor_total_venda >= 0),
+    data_hora_venda TEXT NOT NULL,
+    metodo_pagamento TEXT NOT NULL,
+
+    FOREIGN KEY (id_servico_vendido) REFERENCES servicos(id_servico) ON DELETE SET NULL,
+    -- Garante que id_servico_vendido só seja preenchido se for um serviço
+    CONSTRAINT chk_venda_tipo_servico CHECK (
+        (tipo_item = 'produto' AND id_servico_vendido IS NULL) OR
+        (tipo_item = 'servico' AND id_servico_vendido IS NOT NULL)
+    )
+)"
